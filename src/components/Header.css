@@ -11,7 +11,7 @@ header img {
 }
 #toggler {
     
-    width:30px;
+    width:32px;
     height:26px;
     position: relative;
 }
@@ -45,9 +45,9 @@ header img {
 }
 .inbetween {
     position: absolute;
-    top:8px;
-    left: 1.5px;
-    font-size: 9px;
+    top:7.5px;
+    left: 1px;
+    font-size: 10px;
     font-weight: bold;
     transition: all 500ms;
 }
