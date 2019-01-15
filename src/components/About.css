@@ -1,0 +1,23 @@
+.credits h2 {
+    color: whitesmoke;
+    background: #DC493A;
+    padding: 1rem;
+    width: 80%;
+    margin: 1rem auto;
+}
+
+.credits ul{
+    width: 80%;
+    margin: 1rem auto;
+    background: #006494;
+    color: whitesmoke;
+    
+}
+.credits li {
+    padding: 1rem 0.5rem;
+}
+
+.credits a{
+    color: #DC493A;
+    font-weight: bold;
+}

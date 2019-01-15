@@ -1,0 +1,52 @@
+.container{
+    display: flex;
+    width: 80%;
+    margin: 1rem auto;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+select{
+    background: #DC493A;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    color: whitesmoke;
+    margin-bottom: 0.5rem;
+}
+
+input{
+    background: rgb(112, 38, 30);
+    border:none;
+    outline: none;
+    color: whitesmoke;
+    padding: 1rem;
+}
+::placeholder{
+    color: whitesmoke;
+}
+.result-div{
+    background: #006494;
+    font-size: 2rem;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1rem;
+    color: whitesmoke;
+    animation: show-result-div 500ms linear both;
+}
+.result-div.shown{
+    display: block;
+}
+.result-div.hidden{
+    display: none;
+}
+@keyframes show-result-div {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
