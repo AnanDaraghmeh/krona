@@ -50,15 +50,18 @@ select:hover{
     cursor: pointer;
 }
 .exchange-icon{
-    width: 3rem;
+    font-size: 4rem;
     margin: 1rem;
+    color: wheat;
     align-self: center;
     transition: all 250ms;
 
 }
 .exchange-icon:hover{
     cursor: pointer;
+    color: tan;
 }
+
 .exchange-icon.up{
     transform: rotate(180deg);
 }

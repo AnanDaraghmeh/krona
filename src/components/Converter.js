@@ -3,7 +3,7 @@ import axios from 'axios';
 import Header from './Header';
 import ConvertResult from './ConvertResult';
 import './Converter.css';
-import exchange from '../exchange.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 class Converter extends React.Component{
@@ -101,7 +101,7 @@ class Converter extends React.Component{
                     <option value="JPY">Japanese Yen</option>
                 </select>
             </label>
-            <img onClick={this.toggleValues} className={this.state.arrowDirectionUp?'exchange-icon up':'exchange-icon'} src={exchange} alt="exchange icon"/>
+            <FontAwesomeIcon icon="arrow-circle-down" onClick={this.toggleValues} className={this.state.arrowDirectionUp?'exchange-icon up':'exchange-icon'}/>
             <label className="select-wrapper">
                 <select onChange={this.toHandeler}>
                     <option value="SEK">Swedish krona</option>
