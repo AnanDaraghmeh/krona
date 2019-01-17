@@ -6,8 +6,19 @@ header{
     padding: 1rem;
     background: wheat;
 }
-header img {
-    width:9rem;
+.logo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-container img {
+    width:2rem;
+    margin-right: 0.5rem;
+}
+.logo-container span {
+    display: inline-block;
+    font-size: 1.7rem;
+    font-weight: bold;
 }
 #toggler {
     
@@ -46,7 +57,9 @@ header img {
 .inbetween {
     position: absolute;
     top:7.5px;
-    left: 1px;
+    left: 0;
+    right: 0;
+    text-align: center;
     font-size: 10px;
     font-weight: bold;
     transition: all 500ms;

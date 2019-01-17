@@ -2,15 +2,17 @@
     color: whitesmoke;
     background: #DC493A;
     padding: 1rem;
-    width: 80%;
+    width: 90%;
     margin: 1rem auto;
 }
 
 .credits ul{
-    width: 80%;
+    width: 90%;
     margin: 1rem auto;
     background: #006494;
     color: whitesmoke;
+    padding:0;
+    list-style:none;
     
 }
 .credits li {

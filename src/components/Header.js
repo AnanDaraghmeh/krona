@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.css';
-import logo from './logo.png';
+import logo from '../logo.png';
 import { Link } from 'react-router-dom';
 
 class Header extends React.Component{
@@ -30,7 +30,7 @@ class Header extends React.Component{
                     <span className={this.state.togglerIsClicked? 'inbetween open': 'inbetween'}>MENU</span>
                     <span className={this.state.togglerIsClicked? 'line2 open': 'line2'}></span>
                 </div>
-                <img src={logo} alt="logo"/>
+                <div className="logo-container"><img src={logo} alt="logo"/><span>KRONA</span></div>
             </header>
             <nav className={this.state.NavMenuIsOpen? 'nav-menu shown': 'nav-menu hidden'}>
                 <Link onClick={this.toggleNavMenu} to={'/'}>Exchange Rates</Link>

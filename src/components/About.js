@@ -12,7 +12,7 @@ class About extends React.Component {
       <>
         <Header />
         <div className="credits">
-        <h2>Credits</h2>
+        <h2>About</h2>
         <ul>
           <li>
             Exchange rates are powered by{" "}
@@ -21,7 +21,7 @@ class About extends React.Component {
             updated daily at around 4:00pm CET.
           </li>
           <li>
-            Country flags in svg format are downloaded from{" "}
+            Countries flags in svg format are downloaded from{" "}
             <a href="http://flag-icon-css.lip.is/" target="_blank">
               flag-icon-css.
             </a>

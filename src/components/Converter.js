@@ -3,6 +3,7 @@ import axios from 'axios';
 import Header from './Header';
 import ConvertResult from './ConvertResult';
 import './Converter.css';
+import exchange from '../exchange.svg';
 
 
 class Converter extends React.Component{
@@ -12,8 +13,9 @@ class Converter extends React.Component{
             from:'USD',
             to: 'SEK',
             amount: 0,
-            result: '',
-            showResultDiv: false
+            result: 0,
+            showResultDiv: false,
+            arrowDirectionUp: false
         };
     }
 
@@ -38,12 +40,20 @@ class Converter extends React.Component{
         })
         
     }
+    toggleValues = (e)=>{
+        this.setState({
+            from: this.state.to,
+            to: this.state.from,
+            arrowDirectionUp: !this.state.arrowDirectionUp
+        })
+    }
 
 
     componentDidUpdate(){
         axios.get(`https://api.openrates.io/latest?base=${this.state.from}`)
         .then(res => {
             let result = (res.data.rates[this.state.to] * this.state.amount).toFixed(2);
+            result = result + ' ' + this.state.to;
             this.setState({
                 result: result,
                 showResultDiv: true
@@ -57,6 +67,7 @@ class Converter extends React.Component{
             <>
             <Header />
             <div className="container">
+            <input type="number" placeholder="Amount?" onChange={this.inputHandeler}/>
             <select onChange={this.fromHandeler}>
                 <option value="USD">US Dollar</option>
                 <option value="SEK" >Swedish krona</option>
@@ -69,6 +80,7 @@ class Converter extends React.Component{
                 <option value="TRY">Turkish Lira</option>
                 <option value="JPY">Japanese Yen</option>
             </select>
+            <img onClick={this.toggleValues} className={this.state.arrowDirectionUp?'exchange-icon up':'exchange-icon'} src={exchange} alt="exchange icon"/>
             <select onChange={this.toHandeler}>
                 <option value="SEK">Swedish krona</option>
                 <option value="USD">US Dollar</option>
@@ -81,11 +93,8 @@ class Converter extends React.Component{
                 <option value="TRY">Turkish Lira</option>
                 <option value="JPY">Japanese Yen</option>
             </select>
-            <input type="number" placeholder="Amount?" onChange={this.inputHandeler}/>
             <ConvertResult shownOrHidden={this.state.showResultDiv? 'result-div shown': 'result-div hidden'} result={this.state.result}/>
             </div>
-            
-            
             </>
         )
     }
