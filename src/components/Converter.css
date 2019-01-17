@@ -8,12 +8,44 @@
 }
 select{
     background: #DC493A;
+    width: 100%;
     border: none;
     outline: none;
     padding: 1rem;
-    color: whitesmoke;
+    color: white;
+    appearance: none;
+    transition: all 250ms;
 }
-
+select:hover{
+    box-shadow: 1px 1px 10px #DC493A;
+}
+.select-wrapper{
+    position: relative;
+}
+.select-wrapper::after{
+    content: "<>";
+    position: absolute;
+    transform: rotate(90deg);
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: monospace;
+    font-size: 1.5rem;
+    right: 1rem;
+    top: 30%;
+    pointer-events: none;
+}
+.select-wrapper::before{
+    content: '';
+    background: rgba(255, 255, 255, 0.5);
+    width: 2px;
+    height: 20px;
+    display: block;
+    border-radius: 10px;
+    position: absolute;
+    right: 2.5rem;
+    top: 33%;
+    pointer-events: none;
+}
 select:hover{
     cursor: pointer;
 }
@@ -35,12 +67,12 @@ input{
     background: rgb(112, 38, 30);
     border:none;
     outline: none;
-    color: whitesmoke;
+    color: white;
     padding: 1rem;
     margin-bottom: 1rem;
 }
 ::placeholder{
-    color: whitesmoke;
+    color: white;
 }
 .result-div{
     background: #006494;
@@ -48,7 +80,7 @@ input{
     text-align: center;
     padding: 1rem;
     margin-top: 1rem;
-    color: whitesmoke;
+    color: white;
     animation: show-result-div 250ms;
 }
 .result-div.shown{

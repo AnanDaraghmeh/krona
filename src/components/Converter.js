@@ -87,31 +87,35 @@ class Converter extends React.Component{
             <Header />
             <div className="container">
             <input type="number" placeholder="Amount?" onChange={this.inputHandeler}/>
-            <select onChange={this.fromHandeler}>
-                <option value="USD">US Dollar</option>
-                <option value="SEK" >Swedish krona</option>
-                <option value="EUR">Euro</option>
-                <option value="GBP">British Pound</option>
-                <option value="DKK">Danish Krone</option>
-                <option value="NOK">Norwegian Krone</option>
-                <option value="CAD">Canadian Dollar</option>
-                <option value="AUD">Australian Dollar</option>
-                <option value="TRY">Turkish Lira</option>
-                <option value="JPY">Japanese Yen</option>
-            </select>
+            <label className="select-wrapper">
+                <select onChange={this.fromHandeler}>
+                    <option value="USD">US Dollar</option>
+                    <option value="SEK" >Swedish krona</option>
+                    <option value="EUR">Euro</option>
+                    <option value="GBP">British Pound</option>
+                    <option value="DKK">Danish Krone</option>
+                    <option value="NOK">Norwegian Krone</option>
+                    <option value="CAD">Canadian Dollar</option>
+                    <option value="AUD">Australian Dollar</option>
+                    <option value="TRY">Turkish Lira</option>
+                    <option value="JPY">Japanese Yen</option>
+                </select>
+            </label>
             <img onClick={this.toggleValues} className={this.state.arrowDirectionUp?'exchange-icon up':'exchange-icon'} src={exchange} alt="exchange icon"/>
-            <select onChange={this.toHandeler}>
-                <option value="SEK">Swedish krona</option>
-                <option value="USD">US Dollar</option>
-                <option value="EUR">Euro</option>
-                <option value="GBP">British Pound</option>
-                <option value="DKK">Danish Krone</option>
-                <option value="NOK">Norwegian Krone</option>
-                <option value="CAD">Canadian Dollar</option>
-                <option value="AUD">Australian Dollar</option>
-                <option value="TRY">Turkish Lira</option>
-                <option value="JPY">Japanese Yen</option>
-            </select>
+            <label className="select-wrapper">
+                <select onChange={this.toHandeler}>
+                    <option value="SEK">Swedish krona</option>
+                    <option value="USD">US Dollar</option>
+                    <option value="EUR">Euro</option>
+                    <option value="GBP">British Pound</option>
+                    <option value="DKK">Danish Krone</option>
+                    <option value="NOK">Norwegian Krone</option>
+                    <option value="CAD">Canadian Dollar</option>
+                    <option value="AUD">Australian Dollar</option>
+                    <option value="TRY">Turkish Lira</option>
+                    <option value="JPY">Japanese Yen</option>
+                </select>
+            </label>
             <ConvertResult shownOrHidden={this.state.showResultDiv? 'result-div shown': 'result-div hidden'} result={this.state.result}/>
             </div>
             </>
