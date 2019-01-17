@@ -21,22 +21,36 @@ class Converter extends React.Component{
 
     fromHandeler = (e)=>{
        console.log(e.target.value)
+       if (!this.state.arrowDirectionUp){
         this.setState({
             from: e.target.value
         })
-    }
-    toHandeler = (e)=>{
-        console.log(e.target.value)
+       } else{
         this.setState({
             to: e.target.value
         })
+       }
+        
+    }
+    toHandeler = (e)=>{
+        console.log(e.target.value)
+        if (!this.state.arrowDirectionUp){
+            this.setState({
+                to: e.target.value
+            })
+        } else {
+            this.setState({
+                from: e.target.value
+            })
+        }
+        
         
 
     }
     inputHandeler = (e)=>{
         console.log(e.target.value);
         this.setState({
-            amount: e.target.value
+            amount: parseFloat(e.target.value)
         })
         
     }
@@ -49,15 +63,20 @@ class Converter extends React.Component{
     }
 
 
-    componentDidUpdate(){
+    componentDidUpdate = ()=>{
         axios.get(`https://api.openrates.io/latest?base=${this.state.from}`)
         .then(res => {
             let result = (res.data.rates[this.state.to] * this.state.amount).toFixed(2);
+            console.log(typeof res.data.rates[this.state.to]);
+            console.log(typeof this.state.amount);
             result = result + ' ' + this.state.to;
-            this.setState({
-                result: result,
-                showResultDiv: true
-            })
+            if (this.state.result !== result){
+                this.setState({
+                    result: result,
+                    showResultDiv: true
+                })
+            }
+            
         })
     }
    
