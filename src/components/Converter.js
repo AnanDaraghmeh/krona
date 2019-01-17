@@ -4,6 +4,7 @@ import Header from './Header';
 import ConvertResult from './ConvertResult';
 import './Converter.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Modal from './Modal';
 
 
 class Converter extends React.Component{
@@ -15,7 +16,8 @@ class Converter extends React.Component{
             amount: 0,
             result: 0,
             showResultDiv: false,
-            arrowDirectionUp: false
+            arrowDirectionUp: false,
+            showModal:false
         };
     }
 
@@ -64,21 +66,46 @@ class Converter extends React.Component{
 
 
     componentDidUpdate = ()=>{
-        axios.get(`https://api.openrates.io/latest?base=${this.state.from}`)
-        .then(res => {
-            let result = (res.data.rates[this.state.to] * this.state.amount).toFixed(2);
-            console.log(typeof res.data.rates[this.state.to]);
-            console.log(typeof this.state.amount);
-            result = result + ' ' + this.state.to;
-            if (this.state.result !== result){
+        if (this.state.amount > 0){
+            axios.get(`https://api.openrates.io/latest?base=${this.state.from}`)
+            .then(res => {
+                let result = (res.data.rates[this.state.to] * this.state.amount).toFixed(2);
+                console.log(typeof res.data.rates[this.state.to]);
+                console.log(typeof this.state.amount);
+                result = result + ' ' + this.state.to;
+                if (this.state.result !== result){
+                    this.setState({
+                        result: result,
+                        showResultDiv: true
+                    })
+                }
+            })
+        }
+    }
+
+    componentDidMount = ()=>{
+        if (localStorage.getItem('modal') === null){
+            setTimeout(() => {
                 this.setState({
-                    result: result,
-                    showResultDiv: true
+                    showModal: true
                 })
-            }
-            
+            }, 5000);
+        }
+        
+    }
+    doNotShowhandeler = ()=>{
+    localStorage.setItem('modal', 'hide');
+        this.setState({
+            showModal: false,
         })
     }
+
+    dismissHandeler = ()=>{
+        this.setState({
+            showModal: false,
+        })
+    }
+   
    
 
     render(){
@@ -118,6 +145,12 @@ class Converter extends React.Component{
             </label>
             <ConvertResult shownOrHidden={this.state.showResultDiv? 'result-div shown': 'result-div hidden'} result={this.state.result}/>
             </div>
+            <Modal
+            modalText = 'Change the currencies from the lists above and below the arrow. You can use the arrow to change the direction of conversion.' 
+            showOrHideModal={this.state.showModal?'modal-container shown': 'modal-container hidden'}
+            doNotShow={this.doNotShowhandeler}
+            dismiss={this.dismissHandeler}
+            />
             </>
         )
     }

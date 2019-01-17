@@ -1,0 +1,35 @@
+.modal-container{
+    background: wheat;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px black;
+    position: fixed;
+    top:50%;
+    left:50%;
+    margin-left: -160px;
+    margin-top: -80px;
+    width: 20rem;
+    opacity: 1;
+    animation: show-result-div 500ms;
+    transition: all 1s;
+}
+.modal-container.hidden{
+    display: none;
+}
+.modal-container.shown{
+    display: block;
+}
+.modal-container button {
+    border: none;
+    outline: none;
+    background: #DC493A;
+    padding: 0.5rem;
+    display: inline-block;
+    margin-right: 0.2rem;
+    border-radius: 5px;
+    color: white;
+}
+.modal-container button:hover{
+    cursor: pointer;
+}
