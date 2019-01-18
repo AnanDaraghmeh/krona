@@ -1,10 +1,10 @@
 import React from 'react';
 import axios from 'axios';
-import Header from './Header';
+import Header from '../common/Header';
 import ConvertResult from './ConvertResult';
 import styles from './Converter.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Modal from './Modal';
+import Modal from '../common/Modal';
 
 
 class Converter extends React.Component{

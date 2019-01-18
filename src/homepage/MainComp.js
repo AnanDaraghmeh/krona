@@ -11,7 +11,7 @@ import ca from './flags/ca.svg';
 import au from './flags/au.svg';
 import jp from './flags/jp.svg';
 import tr from './flags/tr.svg';
-import Header from './Header';
+import Header from '../common/Header';
 
 
 class MainComp extends React.Component {

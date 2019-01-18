@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
-import MainComp from './components/MainComp';
-import Converter from './components/Converter';
-import About from './components/About';
+import MainComp from './homepage/MainComp';
+import Converter from './converter/Converter';
+import About from './about/About';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faArrowCircleDown } from '@fortawesome/free-solid-svg-icons';
 
