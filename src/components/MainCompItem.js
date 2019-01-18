@@ -1,10 +1,10 @@
 import React from 'react';
-import '../App.css';
+import styles from './MainCompItem.module.css';
 
 
-const Krona = (props)=>{
+const MainCompItem = (props)=>{
     return (
-        <li className="exchange-item">
+        <li className={styles.exchangeItem}>
             <img src={props.flag} alt="flag"/>
             <div>
             <span>{props.value}</span>
@@ -15,4 +15,4 @@ const Krona = (props)=>{
     )
 }
 
-export default Krona;
+export default MainCompItem;

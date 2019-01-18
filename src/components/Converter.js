@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Header from './Header';
 import ConvertResult from './ConvertResult';
-import './Converter.css';
+import styles from './Converter.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Modal from './Modal';
 
@@ -112,9 +112,9 @@ class Converter extends React.Component{
         return(
             <>
             <Header />
-            <div className="container">
+            <div className={styles.container}>
             <input type="number" placeholder="Amount?" onChange={this.inputHandeler}/>
-            <label className="select-wrapper">
+            <label className={styles.selectWrapper}>
                 <select onChange={this.fromHandeler}>
                     <option value="USD">US Dollar</option>
                     <option value="SEK" >Swedish krona</option>
@@ -128,8 +128,8 @@ class Converter extends React.Component{
                     <option value="JPY">Japanese Yen</option>
                 </select>
             </label>
-            <FontAwesomeIcon icon="arrow-circle-down" onClick={this.toggleValues} className={this.state.arrowDirectionUp?'exchange-icon up':'exchange-icon'}/>
-            <label className="select-wrapper">
+            <FontAwesomeIcon icon="arrow-circle-down" onClick={this.toggleValues} className={this.state.arrowDirectionUp?`${styles.exchangeIcon} ${styles.up}`: styles.exchangeIcon}/>
+            <label className={styles.selectWrapper}>
                 <select onChange={this.toHandeler}>
                     <option value="SEK">Swedish krona</option>
                     <option value="USD">US Dollar</option>
@@ -143,11 +143,11 @@ class Converter extends React.Component{
                     <option value="JPY">Japanese Yen</option>
                 </select>
             </label>
-            <ConvertResult shownOrHidden={this.state.showResultDiv? 'result-div shown': 'result-div hidden'} result={this.state.result}/>
+            <ConvertResult shownOrHidden={this.state.showResultDiv? 'resultDivShown': 'resultDivHidden'} result={this.state.result}/>
             </div>
             <Modal
             modalText = 'Change the currencies from the lists above and below the arrow. You can use the arrow to change the direction of conversion.' 
-            showOrHideModal={this.state.showModal?'modal-container shown': 'modal-container hidden'}
+            showOrHideModal={this.state.showModal? 'modalContainerShown': 'modalContainerHidden'}
             doNotShow={this.doNotShowhandeler}
             dismiss={this.dismissHandeler}
             />

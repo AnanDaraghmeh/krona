@@ -1,9 +1,9 @@
 import React from 'react';
-import './Converter.css'
+import styles from './ConvertResult.module.css';
 
 const ConvertResult = (props)=>{
     return(
-        <div className={props.shownOrHidden}>
+        <div className={styles[props.shownOrHidden]}>
             {props.result}
         </div>
     )

@@ -1,4 +1,4 @@
-.credits h2 {
+.about h2 {
     color: whitesmoke;
     background: #DC493A;
     padding: 1rem;
@@ -6,7 +6,7 @@
     margin: 1rem auto;
 }
 
-.credits ul{
+.about ul{
     width: 90%;
     margin: 1rem auto;
     background: #006494;
@@ -15,11 +15,11 @@
     list-style:none;
     
 }
-.credits li {
+.about li {
     padding: 1rem 0.5rem;
 }
 
-.credits a{
+.about a{
     color: #DC493A;
     font-weight: bold;
 }

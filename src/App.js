@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 import MainComp from './components/MainComp';
 import Converter from './components/Converter';
 import About from './components/About';
-import './App.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faArrowCircleDown } from '@fortawesome/free-solid-svg-icons';
 

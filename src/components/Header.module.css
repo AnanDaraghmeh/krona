@@ -1,32 +1,32 @@
 
-header{
+.header{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
     background: wheat;
 }
-.logo-container{
+.logoContainer{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.logo-container img {
+.logoContainer img {
     width:2rem;
     margin-right: 0.5rem;
 }
-.logo-container span {
+.logoContainer span {
     display: inline-block;
     font-size: 1.7rem;
     font-weight: bold;
 }
-#toggler {
+.toggler {
     
     width:32px;
     height:26px;
     position: relative;
 }
-#toggler:hover{
+.toggler:hover{
     cursor: pointer;
 }
 .line1, .line2{
@@ -68,12 +68,12 @@ header{
     opacity: 0;
 }
 
-.nav-menu{
+.navMenu{
     background: wheat;
     animation: slide-down 250ms ease-in both ;
     border-top: 1px dotted gray;
 }
-.nav-menu a {
+.navMenu a {
     text-decoration: none;
     color: black;
     display:block;
@@ -81,7 +81,7 @@ header{
     text-transform: uppercase;
     font-weight: bold;
 }
-.nav-menu a:hover{
+.navMenu a:hover{
     background: tan;
 }
 .shown{

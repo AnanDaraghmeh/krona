@@ -1,4 +1,4 @@
-.modal-container{
+.modalContainer{
     background: wheat;
     padding: 1rem;
     margin: 1rem;
@@ -14,13 +14,15 @@
     animation: show-result-div 500ms;
     transition: all 1s;
 }
-.modal-container.hidden{
+.modalContainerHidden{
+    composes: modalContainer;
     display: none;
 }
-.modal-container.shown{
+.modalContainerShown{
+    composes: modalContainer;
     display: block;
 }
-.modal-container button {
+.modalContainer button {
     border: none;
     outline: none;
     background: #DC493A;
@@ -30,6 +32,6 @@
     border-radius: 5px;
     color: white;
 }
-.modal-container button:hover{
+.modalContainer button:hover{
     cursor: pointer;
 }

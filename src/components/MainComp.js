@@ -1,7 +1,7 @@
 import React from 'react';
-import Krona from './Krona';
+import MainCompItem from './MainCompItem';
 import axios from 'axios';
-import '../App.css';
+import styles from './MainComp.module.css';
 import us from './flags/us.svg'
 import eu from './flags/eu.svg';
 import gb from './flags/gb.svg';
@@ -47,19 +47,19 @@ class MainComp extends React.Component {
         return (
             <>
             <Header/>
-            <div className="krona-rates-container">
+            <div className={styles.kronaRatesContainer}>
                 <h2>Exchange Rates | Swedish Krona</h2>
                 <p>Latest update: {this.state.latestUpdate}</p>
-                <ul className="exchange-list">
-                <Krona value={this.toFixedThree(this.state.kronaRates.EUR)} name='Euro' flag={eu}/>
-                <Krona value={this.toFixedThree(this.state.kronaRates.USD)} name='US Dollar' flag={us}/>
-                <Krona value={this.toFixedThree(this.state.kronaRates.GBP)} name='British Pound' flag={gb}/>
-                <Krona value={this.toFixedThree(this.state.kronaRates.DKK)} name='Danish Krone' flag={dk}/>
-                <Krona value={this.toFixedThree(this.state.kronaRates.NOK)} name='Norwegian Krone' flag={no}/>
-                <Krona value={this.toFixedThree(this.state.kronaRates.CAD)} name='Canadian Dollar' flag={ca}/>
-                <Krona value={this.toFixedThree(this.state.kronaRates.AUD)} name='Australian Dollar' flag={au}/>
-                <Krona value={this.toFixedThree(this.state.kronaRates.TRY)} name='Turkish Lira' flag={tr}/>
-                <Krona value={this.toFixedThree(this.state.kronaRates.JPY)} name='Japanese Yen' flag={jp}/>
+                <ul className={styles.exchangeList}>
+                <MainCompItem value={this.toFixedThree(this.state.kronaRates.EUR)} name='Euro' flag={eu}/>
+                <MainCompItem value={this.toFixedThree(this.state.kronaRates.USD)} name='US Dollar' flag={us}/>
+                <MainCompItem value={this.toFixedThree(this.state.kronaRates.GBP)} name='British Pound' flag={gb}/>
+                <MainCompItem value={this.toFixedThree(this.state.kronaRates.DKK)} name='Danish Krone' flag={dk}/>
+                <MainCompItem value={this.toFixedThree(this.state.kronaRates.NOK)} name='Norwegian Krone' flag={no}/>
+                <MainCompItem value={this.toFixedThree(this.state.kronaRates.CAD)} name='Canadian Dollar' flag={ca}/>
+                <MainCompItem value={this.toFixedThree(this.state.kronaRates.AUD)} name='Australian Dollar' flag={au}/>
+                <MainCompItem value={this.toFixedThree(this.state.kronaRates.TRY)} name='Turkish Lira' flag={tr}/>
+                <MainCompItem value={this.toFixedThree(this.state.kronaRates.JPY)} name='Japanese Yen' flag={jp}/>
                 </ul>
             </div>
             </>

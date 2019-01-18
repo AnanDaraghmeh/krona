@@ -1,0 +1,15 @@
+.exchangeItem{
+    background: #006494;
+    margin-bottom: 0.5rem;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .exchangeItem img {
+    width: 4rem;
+    margin-right: 3rem;
+  }
+  .exchangeItem span{
+    margin-right: 0.5rem;
+  }

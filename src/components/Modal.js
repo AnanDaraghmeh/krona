@@ -1,9 +1,9 @@
 import React from 'react';
-import './Modal.css';
+import styles from './Modal.module.css';
 
 const Modal = (props)=>{
     return(
-        <div className={props.showOrHideModal}>
+        <div className={styles[props.showOrHideModal]}>
             <p>{props.modalText}</p>
             <button onClick={props.doNotShow}>Don't show again</button>
             <button onClick={props.dismiss}>Dismiss</button>

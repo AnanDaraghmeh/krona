@@ -6,7 +6,7 @@
     justify-content: center;
     
 }
-select{
+.container select{
     background: #DC493A;
     width: 100%;
     border: none;
@@ -16,13 +16,14 @@ select{
     appearance: none;
     transition: all 250ms;
 }
-select:hover{
+.container select:hover{
+    cursor: pointer;
     box-shadow: 1px 1px 10px #DC493A;
 }
-.select-wrapper{
+.selectWrapper{
     position: relative;
 }
-.select-wrapper::after{
+.selectWrapper::after{
     content: "<>";
     position: absolute;
     transform: rotate(90deg);
@@ -34,7 +35,7 @@ select:hover{
     top: 30%;
     pointer-events: none;
 }
-.select-wrapper::before{
+.selectWrapper::before{
     content: '';
     background: rgba(255, 255, 255, 0.5);
     width: 2px;
@@ -46,10 +47,8 @@ select:hover{
     top: 33%;
     pointer-events: none;
 }
-select:hover{
-    cursor: pointer;
-}
-.exchange-icon{
+
+.exchangeIcon{
     font-size: 4rem;
     margin: 1rem;
     color: wheat;
@@ -57,16 +56,16 @@ select:hover{
     transition: all 250ms;
 
 }
-.exchange-icon:hover{
+.exchangeIcon:hover{
     cursor: pointer;
     color: tan;
 }
 
-.exchange-icon.up{
+.exchangeIcon.up{
     transform: rotate(180deg);
 }
 
-input{
+.container input{
     background: rgb(112, 38, 30);
     border:none;
     outline: none;
@@ -76,29 +75,4 @@ input{
 }
 ::placeholder{
     color: white;
-}
-.result-div{
-    background: #006494;
-    font-size: 2rem;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 1rem;
-    color: white;
-    animation: show-result-div 250ms;
-}
-.result-div.shown{
-    display: block;
-}
-.result-div.hidden{
-    display: none;
-}
-@keyframes show-result-div {
-    from {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
 }
