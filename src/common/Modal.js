@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Modal.module.css';
+import propTypes from 'prop-types';
 
 const Modal = (props)=>{
     return(
@@ -11,4 +12,10 @@ const Modal = (props)=>{
     )
 }
 
+Modal.propTypes = {
+    showOrHideModal: propTypes.string,
+    modalText: propTypes.string,
+    doNotShow: propTypes.func,
+    dismiss: propTypes.func
+}
 export default Modal;

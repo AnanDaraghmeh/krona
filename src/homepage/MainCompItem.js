@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './MainCompItem.module.css';
-
+import propTypes from 'prop-types';
 
 const MainCompItem = (props)=>{
     return (
@@ -13,6 +13,12 @@ const MainCompItem = (props)=>{
             </div>  
         </li>
     )
+}
+
+MainCompItem.propTypes = {
+    flag: propTypes.string,
+    value: propTypes.string,
+    name: propTypes.string
 }
 
 export default MainCompItem;

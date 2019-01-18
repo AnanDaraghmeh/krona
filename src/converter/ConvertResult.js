@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './ConvertResult.module.css';
+import propTypes from 'prop-types';
 
 const ConvertResult = (props)=>{
     return(
@@ -9,4 +10,8 @@ const ConvertResult = (props)=>{
     )
 }
 
+ConvertResult.propTypes = {
+    shownOrHidden: propTypes.string,
+    result: propTypes.string
+}
 export default ConvertResult; 

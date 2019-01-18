@@ -14,7 +14,7 @@ class Converter extends React.Component{
             from:'USD',
             to: 'SEK',
             amount: 0,
-            result: 0,
+            result: '',
             showResultDiv: false,
             arrowDirectionUp: false,
             showModal:false
