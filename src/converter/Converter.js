@@ -152,8 +152,8 @@ class Converter extends React.Component{
             <ConvertResult shownOrHidden={this.state.showResultDiv? 'resultDivShown': 'resultDivHidden'} result={this.state.result}/>
             </div>
             <Modal
-            modalText = 'Change the currencies from the lists above and below the arrow. You can use the arrow to change the direction of conversion.' 
-            showOrHideModal={this.state.showModal? 'modalContainerShown': 'modalContainerHidden'}
+            pose={this.state.showModal? 'visible': 'hidden'}
+            modalText = 'Change the currencies from the lists above and below the arrow. You can use the arrow to change the direction of conversion.'
             doNotShow={this.doNotShowhandeler}
             dismiss={this.dismissHandeler}
             />

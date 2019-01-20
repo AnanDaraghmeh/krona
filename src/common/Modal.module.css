@@ -10,16 +10,16 @@
     margin-left: -160px;
     margin-top: -80px;
     width: 20rem;
-    animation: fadeIn .5s;
+    /* animation: fadeIn .5s; */
 }
-.modalContainerHidden{
+/* .modalContainerHidden{
     composes: modalContainer;
     display: none;
 }
 .modalContainerShown{
     composes: modalContainer;
     display: block;
-}
+} */
 .modalContainer button {
     border: none;
     outline: none;
