@@ -10,9 +10,7 @@
     margin-left: -160px;
     margin-top: -80px;
     width: 20rem;
-    opacity: 1;
-    animation: show-result-div 500ms;
-    transition: all 1s;
+    animation: fadeIn .5s;
 }
 .modalContainerHidden{
     composes: modalContainer;
@@ -34,4 +32,13 @@
 }
 .modalContainer button:hover{
     cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

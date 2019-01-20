@@ -68,9 +68,10 @@ class Converter extends React.Component{
             this.fetchData();
         }
     }
-
+    
+    signal = axios.CancelToken.source();
     fetchData = ()=>{
-        axios.get(`https://api.openrates.io/latest?base=${this.state.from}`)
+        axios.get(`https://api.openrates.io/latest?base=${this.state.from}`, {cancelToken: this.signal.token})
             .then(res => {
                 let result = (res.data.rates[this.state.to] * this.state.amount).toFixed(2);
                 console.log(typeof res.data.rates[this.state.to]);
@@ -96,7 +97,8 @@ class Converter extends React.Component{
     }
 
     componentWillUnmount = ()=>{
-        //to cancel http request when component will unmount and stop memory leak
+        //cancel http request when component will unmount and stop memory leak
+        this.signal.cancel('Api is being canceled');
     }
 
     doNotShowhandeler = ()=>{
