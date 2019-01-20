@@ -2,14 +2,17 @@ import React from 'react';
 import styles from './Modal.module.css';
 import propTypes from 'prop-types';
 
-const Modal = (props)=>{
-    return(
-        <div className={styles[props.showOrHideModal]}>
-            <p>{props.modalText}</p>
-            <button onClick={props.doNotShow}>Don't show again</button>
-            <button onClick={props.dismiss}>Dismiss</button>
-        </div>
-    )
+class Modal extends React.Component{
+
+    render(){
+        return(
+            <div className={styles[this.props.showOrHideModal]}>
+                <p>{this.props.modalText}</p>
+                <button onClick={this.props.doNotShow}>Don't show again</button>
+                <button onClick={this.props.dismiss}>Dismiss</button>
+            </div>
+        )
+    }
 }
 
 Modal.propTypes = {

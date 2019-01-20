@@ -32,7 +32,7 @@ class Header extends React.Component{
                 </div>
                 <div className={styles.logoContainer}><img src={logo} alt="logo"/><span>KRONA</span></div>
             </header>
-            <nav className={this.state.NavMenuIsOpen? `${styles.navMenu} ${styles.shown}`: `${styles.navMenu} ${styles.hidden}`}>
+            <nav className={this.state.NavMenuIsOpen? `${styles.navMenu} ${styles.navMenuShown}`: styles.navMenu}>
                 <Link onClick={this.toggleNavMenu} to={'/'}>Exchange Rates</Link>
                 <Link onClick={this.toggleNavMenu} to={'/converter'}>Currency Converter</Link>
                 <Link onClick={this.toggleNavMenu} to={'/about'}>About</Link>

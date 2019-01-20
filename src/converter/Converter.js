@@ -32,8 +32,8 @@ class Converter extends React.Component{
             to: e.target.value
         })
        }
-        
     }
+
     toHandeler = (e)=>{
         console.log(e.target.value)
         if (!this.state.arrowDirectionUp){
@@ -45,10 +45,8 @@ class Converter extends React.Component{
                 from: e.target.value
             })
         }
-        
-        
-
     }
+
     inputHandeler = (e)=>{
         console.log(e.target.value);
         this.setState({
@@ -56,6 +54,7 @@ class Converter extends React.Component{
         })
         
     }
+
     toggleValues = (e)=>{
         this.setState({
             from: this.state.to,
@@ -64,10 +63,14 @@ class Converter extends React.Component{
         })
     }
 
+    componentDidUpdate = (prevProps, prevState)=>{
+        if (this.state.from !== prevState.from || this.state.to !== prevState.to || this.state.amount !== prevState.amount || this.state.arrowDirectionUp !== prevState.arrowDirectionUp){
+            this.fetchData();
+        }
+    }
 
-    componentDidUpdate = ()=>{
-        if (this.state.amount > 0){
-            axios.get(`https://api.openrates.io/latest?base=${this.state.from}`)
+    fetchData = ()=>{
+        axios.get(`https://api.openrates.io/latest?base=${this.state.from}`)
             .then(res => {
                 let result = (res.data.rates[this.state.to] * this.state.amount).toFixed(2);
                 console.log(typeof res.data.rates[this.state.to]);
@@ -80,7 +83,6 @@ class Converter extends React.Component{
                     })
                 }
             })
-        }
     }
 
     componentDidMount = ()=>{
@@ -91,8 +93,12 @@ class Converter extends React.Component{
                 })
             }, 5000);
         }
-        
     }
+
+    componentWillUnmount = ()=>{
+        //to cancel http request when component will unmount and stop memory leak
+    }
+
     doNotShowhandeler = ()=>{
     localStorage.setItem('modal', 'hide');
         this.setState({
@@ -106,8 +112,6 @@ class Converter extends React.Component{
         })
     }
    
-   
-
     render(){
         return(
             <>

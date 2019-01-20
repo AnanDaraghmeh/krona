@@ -5,6 +5,8 @@
     align-items: center;
     padding: 1rem;
     background: wheat;
+    border-bottom: 1px solid black;
+    animation: slideDown .5s ease-out;
 }
 .logoContainer{
     display: flex;
@@ -70,8 +72,12 @@
 
 .navMenu{
     background: wheat;
-    animation: slide-down 250ms ease-in both ;
-    border-top: 1px dotted gray;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .5s linear;
+}
+.navMenuShown{
+    max-height: 500px;
 }
 .navMenu a {
     text-decoration: none;
@@ -84,19 +90,14 @@
 .navMenu a:hover{
     background: tan;
 }
-.shown{
-    display: block;
-}
-.hidden{
-    display: none;
-}
-@keyframes slide-down {
+
+@keyframes slideDown {
     from {
+        transform: translateY(-20px);
         opacity: 0;
-        transform: translateY(-15px);
     }
     to {
-        opacity: 1;
         transform: translateY(0px);
+        opacity: 1;
     }
 }
