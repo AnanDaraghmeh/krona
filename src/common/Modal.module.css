@@ -1,3 +1,20 @@
+.shade{
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    animation: fadeIn .5s;
+}
+.shadeHidden {
+    composes: shade;
+    display: none;
+}
+.shadeShown {
+    composes: shade;
+    display: block;
+}
 .modal{
     background: wheat;
     padding: 1rem;
@@ -11,14 +28,6 @@
     margin-top: -80px;
     width: 20rem;
 }
-.shade {
-    position: fixed;
-    background: rgba(0, 0, 0, 0.5);
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
 
 .modal button {
     border: none;
@@ -32,4 +41,9 @@
 }
 .modal button:hover{
     cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }

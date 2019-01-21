@@ -6,7 +6,6 @@
     padding: 1rem;
     background: wheat;
     border-bottom: 1px solid black;
-    animation: slideDown .5s ease-out;
 }
 .logoContainer{
     display: flex;
@@ -89,15 +88,4 @@
 }
 .navMenu a:hover{
     background: tan;
-}
-
-@keyframes slideDown {
-    from {
-        transform: translateY(-20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0px);
-        opacity: 1;
-    }
 }

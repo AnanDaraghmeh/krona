@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
 import MainComp from './homepage/MainComp';
 import Converter from './converter/Converter';
 import About from './about/About';
@@ -8,18 +8,16 @@ import { faArrowCircleDown } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faArrowCircleDown);
 
-class App extends Component {
-  render() {
+const App = () => {
     return (
-      <Router>
-      <React.Fragment>
-        <Route exact path='/' component={MainComp}/>
-        <Route path='/converter' component={Converter}/>
-        <Route path='/about' component={About}/>
-      </React.Fragment>
-      </Router>
-    );
-  }
+      <BrowserRouter>
+        <React.Fragment>
+            <Route exact path='/' component={MainComp}/>
+            <Route path='/converter' component={Converter}/>
+            <Route path='/about' component={About}/>
+        </React.Fragment>
+      </BrowserRouter>
+    )
 }
 
 export default App;
