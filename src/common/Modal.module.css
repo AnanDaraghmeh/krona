@@ -1,26 +1,26 @@
-.modalContainer{
+.modal{
     background: wheat;
     padding: 1rem;
     margin: 1rem;
     border-radius: 5px;
     box-shadow: 5px 5px 15px black;
-    position: fixed;
+    position: absolute;
     top:50%;
     left:50%;
     margin-left: -160px;
     margin-top: -80px;
     width: 20rem;
-    /* animation: fadeIn .5s; */
 }
-/* .modalContainerHidden{
-    composes: modalContainer;
-    display: none;
-}
-.modalContainerShown{
-    composes: modalContainer;
-    display: block;
-} */
-.modalContainer button {
+.shade {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+.modal button {
     border: none;
     outline: none;
     background: #DC493A;
@@ -30,15 +30,6 @@
     border-radius: 5px;
     color: white;
 }
-.modalContainer button:hover{
+.modal button:hover{
     cursor: pointer;
-}
-
-@keyframes fadeIn {
-    from{
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
 }
