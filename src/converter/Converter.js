@@ -152,7 +152,7 @@ class Converter extends React.Component{
             </div>
             <Modal
             toggleClass={this.state.showModal? "shadeShown": "shade"}
-            modalText = 'Change the currencies from the lists above and below the arrow. You can use the arrow to change the direction of conversion.'
+            modalText = 'Change the currencies from the lists above and below the arrow. You can click the arrow to change the direction of conversion.'
             doNotShow={this.doNotShowhandeler}
             dismiss={this.dismissHandeler}
             />

@@ -30,7 +30,7 @@ class Header extends React.Component{
                     <span className={this.state.togglerIsClicked? `${styles.inbetween} ${styles.open}`: styles.inbetween}>MENU</span>
                     <span className={this.state.togglerIsClicked? `${styles.line2} ${styles.open}`: styles.line2}></span>
                 </div>
-                <div className={styles.logoContainer}><img src={logo} alt="logo"/><span>KRONA</span></div>
+                <Link to={'/'}><div className={styles.logoContainer}><img src={logo} alt="logo"/><span>KRONA</span></div></Link>
             </header>
             <nav className={this.state.NavMenuIsOpen? `${styles.navMenu} ${styles.navMenuShown}`: styles.navMenu}>
                 <Link onClick={this.toggleNavMenu} to={'/'}>Exchange Rates</Link>

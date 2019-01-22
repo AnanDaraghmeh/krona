@@ -12,13 +12,16 @@ class About extends React.Component {
         <h2>About</h2>
         <ul>
           <li>
+            This web app is optimized for mobile devices.
+          </li>
+          <li>
             Exchange rates are powered by{" "}
             <a href="http://www.openrates.io/" target="_blank" rel="noopener noreferrer">
               openrates.io API.</a> All currency data is sourced from the European Central Bank and
             updated daily at around 4:00pm CET.
           </li>
           <li>
-            Countries flags in svg format are downloaded from{" "}
+            Countries flags are downloaded from{" "}
             <a href="http://flag-icon-css.lip.is/" target="_blank" rel="noopener noreferrer">
               flag-icon-css.
             </a>
