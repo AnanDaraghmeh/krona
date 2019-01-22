@@ -12,7 +12,7 @@ class Converter extends React.Component{
         this.state={
             from:'USD',
             to: 'SEK',
-            amount: 0,
+            amount: '',
             result: '',
             showResultDiv: false,
             arrowDirectionUp: false,
@@ -64,6 +64,7 @@ class Converter extends React.Component{
 
     componentDidUpdate = (prevProps, prevState)=>{
         if (this.state.from !== prevState.from || this.state.to !== prevState.to || this.state.amount !== prevState.amount || this.state.arrowDirectionUp !== prevState.arrowDirectionUp){
+            if (this.state.amount > 0 )
             this.fetchData();
         }
     }
