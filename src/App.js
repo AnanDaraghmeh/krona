@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Header from './common/Header';
 import MainComp from './homepage/MainComp';
 import Converter from './converter/Converter';
 import About from './about/About';
@@ -10,13 +11,14 @@ library.add(faArrowCircleDown);
 
 const App = () => {
     return (
-      <BrowserRouter>
+      <Router>
         <React.Fragment>
-            <Route exact path='/' component={MainComp}/>
-            <Route path='/converter' component={Converter}/>
-            <Route path='/about' component={About}/>
+          <Header />
+          <Route exact path='/' component={MainComp}/>
+          <Route path='/converter' component={Converter}/>
+          <Route path='/about' component={About}/>
         </React.Fragment>
-      </BrowserRouter>
+      </Router>
     )
 }
 

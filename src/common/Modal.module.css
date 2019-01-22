@@ -6,9 +6,6 @@
     right: 0;
     bottom: 0;
     animation: fadeIn .5s;
-}
-.shadeHidden {
-    composes: shade;
     display: none;
 }
 .shadeShown {

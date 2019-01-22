@@ -1,7 +1,3 @@
-.about{
-    animation: slideDown .5s;
-}
-
 .about h2 {
     color: whitesmoke;
     background: #DC493A;
@@ -26,15 +22,4 @@
 .about a{
     color: #DC493A;
     font-weight: bold;
-}
-
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0px);
-    }
 }

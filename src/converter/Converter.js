@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import Header from '../common/Header';
 import ConvertResult from './ConvertResult';
 import styles from './Converter.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -87,8 +86,8 @@ class Converter extends React.Component{
     }
 
     componentDidMount = ()=>{
-        if (localStorage.getItem('modal') === null){
-            setTimeout(() => {
+        if (localStorage.getItem('doNotShowModal') === null){
+            this.timeout = setTimeout(() => {
                 this.setState({
                     showModal: true
                 })
@@ -97,12 +96,13 @@ class Converter extends React.Component{
     }
 
     componentWillUnmount = ()=>{
-        //cancel http request when component will unmount and stop memory leak
+        //cancel setTimeout and http requests to stop memory leak
+        clearTimeout(this.timeout);
         this.signal.cancel('Api is being canceled');
     }
 
     doNotShowhandeler = ()=>{
-    localStorage.setItem('modal', 'hide');
+    localStorage.setItem('doNotShowModal', 'true');
         this.setState({
             showModal: false,
         })
@@ -117,7 +117,6 @@ class Converter extends React.Component{
     render(){
         return(
             <>
-            <Header />
             <div className={styles.container}>
             <input type="number" placeholder="Amount?" onChange={this.inputHandeler}/>
             <label className={styles.selectWrapper}>
@@ -152,7 +151,7 @@ class Converter extends React.Component{
             <ConvertResult shownOrHidden={this.state.showResultDiv? 'resultDivShown': 'resultDivHidden'} result={this.state.result}/>
             </div>
             <Modal
-            showOrHide={this.state.showModal? "shadeShown": "shadeHidden"}
+            toggleClass={this.state.showModal? "shadeShown": "shade"}
             modalText = 'Change the currencies from the lists above and below the arrow. You can use the arrow to change the direction of conversion.'
             doNotShow={this.doNotShowhandeler}
             dismiss={this.dismissHandeler}

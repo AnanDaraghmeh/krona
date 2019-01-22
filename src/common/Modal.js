@@ -6,7 +6,7 @@ class Modal extends React.Component{
 
     render(){
         return(
-                <div className={styles[this.props.showOrHide]}>
+                <div className={styles[this.props.toggleClass]}>
                     <div className={styles.modal}>
                         <p>{this.props.modalText}</p>
                         <button onClick={this.props.doNotShow}>Don't show again</button>

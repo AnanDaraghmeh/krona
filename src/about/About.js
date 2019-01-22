@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "../common/Header";
 import styles from "./About.module.css";
 
 class About extends React.Component {
@@ -9,8 +8,6 @@ class About extends React.Component {
   }
   render() {
     return (
-      <>
-        <Header />
         <div className={styles.about}>
         <h2>About</h2>
         <ul>
@@ -34,7 +31,6 @@ class About extends React.Component {
           </li>
         </ul>
         </div>
-      </>
     );
   }
 }

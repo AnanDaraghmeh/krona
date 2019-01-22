@@ -11,7 +11,6 @@ import ca from './flags/ca.svg';
 import au from './flags/au.svg';
 import jp from './flags/jp.svg';
 import tr from './flags/tr.svg';
-import Header from '../common/Header';
 
 
 class MainComp extends React.Component {
@@ -45,8 +44,6 @@ class MainComp extends React.Component {
    
     render(){
         return (
-            <>
-            <Header/>
             <div className={styles.kronaRatesContainer}>
                 <h2>Exchange Rates | Swedish Krona</h2>
                 <p>Latest update: {this.state.latestUpdate}</p>
@@ -62,7 +59,6 @@ class MainComp extends React.Component {
                 <MainCompItem value={this.toFixedThree(this.state.kronaRates.JPY)} name='Japanese Yen' flag={jp}/>
                 </ul>
             </div>
-            </>
         )
     }
 }
